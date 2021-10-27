@@ -16,6 +16,8 @@ Use your browser or favorite tool to interact with the web service on `http://lo
 
 ## Spike code
 
+See `src/ws.go` for the various endpoints.
+
 Add an article using the service end point
 
 ```bash
