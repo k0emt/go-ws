@@ -6,7 +6,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	articles "web-spike/services"
+	services "web-spike/services"
 )
 
 func main() {
@@ -24,9 +24,11 @@ func main() {
 		})
 	})
 
-	router.GET("/articles", articles.GetArticles)
-	router.GET("/articles/:id", articles.GetArticleByID)
-	router.POST("/articles", articles.PostArticles)
+	router.GET("/articles", services.GetArticles)
+	router.GET("/articles/:id", services.GetArticleByID)
+	router.POST("/articles", services.PostArticles)
+
+	router.GET("/UTC", services.GetUtcTime)
 
 	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
