@@ -36,3 +36,7 @@ func GetUtcTime(c *gin.Context) {
 	}
 
 }
+
+// examples include mapping results into structs for more concise response
+// https://appdividend.com/2020/03/04/golang-how-to-serialize-json-string-in-go-example/
+// https://www.thepolyglotdeveloper.com/2017/07/consume-restful-api-endpoints-golang-application/
