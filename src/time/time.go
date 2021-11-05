@@ -1,4 +1,4 @@
-package services
+package time
 
 import (
 	"encoding/json"

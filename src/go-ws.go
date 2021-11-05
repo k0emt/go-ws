@@ -6,7 +6,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	services "web-spike/services"
+	articles "go-ws/articles"
+	time "go-ws/time"
 )
 
 func main() {
@@ -18,17 +19,23 @@ func main() {
 	router.StaticFS("/static", http.Dir("../static"))
 	router.StaticFile("/favicon.ico", "../resources/favicon.ico")
 
+	router.GET("/echo/:text", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": c.Param("text"),
+		})
+	})
+
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
 		})
 	})
 
-	router.GET("/articles", services.GetArticles)
-	router.GET("/articles/:id", services.GetArticleByID)
-	router.POST("/articles", services.PostArticles)
+	router.GET("/articles", articles.GetArticles)
+	router.GET("/articles/:id", articles.GetArticleByID)
+	router.POST("/articles", articles.PostArticles)
 
-	router.GET("/UTC", services.GetUtcTime)
+	router.GET("/UTC", time.GetUtcTime)
 
 	router.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
