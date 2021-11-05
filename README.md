@@ -35,6 +35,15 @@ Things learned:
 - In order for a Go method to be exported from its package, it must start with a capital letter. :-/
 - you import packages (whole directories or external references) and not files
 
+## Some GO commands
+
+```bash
+go mod init path.to/module
+go run .
+go build .
+go mod tidy
+```
+
 ## Resource Links
 
 - <https://golang.org/doc/tutorial/getting-started>
