@@ -44,6 +44,17 @@ go build .
 go mod tidy
 ```
 
+## Next Steps
+
+Some more things I'm going to tackle with this project:
+
+- parse out the result in the time service
+  - add another end point that uses/does the parsing
+- gRPC / HTTP2 endpoints
+- GraphQL
+  - another one to utilize the time service, specify what you want back
+- HTTPS
+
 ## Resource Links
 
 - <https://golang.org/doc/tutorial/getting-started>

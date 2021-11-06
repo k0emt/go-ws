@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	articles "go-ws/articles"
+	bite "go-ws/bite"
 	time "go-ws/time"
 )
 
@@ -19,17 +20,8 @@ func main() {
 	router.StaticFS("/static", http.Dir("../static"))
 	router.StaticFile("/favicon.ico", "../resources/favicon.ico")
 
-	router.GET("/echo/:text", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": c.Param("text"),
-		})
-	})
-
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	router.GET("/echo/:text", bite.Echo)
+	router.GET("/ping", bite.Pong)
 
 	router.GET("/articles", articles.GetArticles)
 	router.GET("/articles/:id", articles.GetArticleByID)
