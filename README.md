@@ -56,6 +56,9 @@ go mod init path.to/module
 go run .
 go build .
 go mod tidy
+go install
+go test
+go get
 ```
 
 ## Next Steps
