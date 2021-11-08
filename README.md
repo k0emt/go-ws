@@ -34,6 +34,20 @@ Things learned:
 
 - In order for a Go method to be exported from its package, it must start with a capital letter. :-/
 - you import packages (whole directories or external references) and not files
+- `make()` vs `new()`
+- slices vs arrays
+  Kind of like lists vs fixed size array.  Manipulate the slice with the `append` method.  With `make()` can cap the size of the slice.  Slices are ordered.  Can use the `sort` package to sort the list.
+  
+  Sorting a slice ascending and descending:
+
+  ```go
+  var numbers = []int{5, 4, 8, 3, 2, 1}
+  sort.Ints(numbers)
+  fmt.Println(numbers)
+
+  sort.Sort(sort.Reverse(sort.IntSlice(numbers)))
+  fmt.Println(numbers)
+  ```
 
 ## Some GO commands
 
@@ -59,6 +73,6 @@ Some more things I'm going to tackle with this project:
 
 ## Resource Links
 
-- <https://golang.org/doc/tutorial/getting-started>
-- <https://golang.org/doc/tutorial/web-service-gin>
+- [Go Lang tutorial](https://golang.org/doc/tutorial/getting-started)
+- [Gin web services](https://golang.org/doc/tutorial/web-service-gin)
 - <https://rmoff.net/2020/07/16/learning-golang-some-rough-notes-s02e07-splitting-go-code-into-separate-source-files-and-building-a-binary-executable/>
