@@ -54,6 +54,8 @@ Some more things I'm going to tackle with this project:
 - GraphQL
   - another one to utilize the time service, specify what you want back
 - HTTPS
+- how to create and run unit tests
+- how to use with swagger.io
 
 ## Resource Links
 
