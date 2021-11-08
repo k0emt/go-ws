@@ -70,9 +70,36 @@ Some more things I'm going to tackle with this project:
 - HTTPS
 - how to create and run unit tests
 - how to use with swagger.io
+- Authentication / Authorization: API key?  JWT
+
+## Learning Resources
+
+### Books
+
+- [The Go Programming Language](https://www.amazon.com/gp/product/B0184N7WWS)
+- [Learning Go: An Idiomatic Approach to Real-World Go Programming](https://www.amazon.com/gp/product/B08XYGCM71)
+
+### LinkedIN Learning
+
+- [Learning Go](https://www.linkedin.com/learning/learning-go-8399317)
+- [Go Essential Training](https://www.linkedin.com/learning/go-essential-training)
+- [Learning the Go Standard Library](https://www.linkedin.com/learning/learning-the-go-standard-library)
+- [GO Design Patterns](https://www.linkedin.com/learning/go-design-patterns)
+
+### Udemy Courses
+
+- [Go: The Complete Developer's Guide (Golang)](https://www.udemy.com/course/go-the-complete-developers-guide/)
+- [REST based microservices API development in Golang](https://www.udemy.com/course/rest-based-microservices-api-development-in-go-lang/)
+- [gRPC GoLang Master Class: Build Modern API & Microservices](https://www.udemy.com/course/grpc-golang/)
+- [Go Bootcamp: Master Golang with 1000+ Exercises and Projects](https://www.udemy.com/course/learn-go-the-complete-bootcamp-course-golang/)
+
+### Web
+
+- [Robin Moffat - Learning Go](https://rmoff.net/2020/06/25/learning-golang-some-rough-notes-s01e00/)
+  - [separate source files](https://rmoff.net/2020/07/16/learning-golang-some-rough-notes-s02e07-splitting-go-code-into-separate-source-files-and-building-a-binary-executable/)
 
 ## Resource Links
 
 - [Go Lang tutorial](https://golang.org/doc/tutorial/getting-started)
 - [Gin web services](https://golang.org/doc/tutorial/web-service-gin)
-- <https://rmoff.net/2020/07/16/learning-golang-some-rough-notes-s02e07-splitting-go-code-into-separate-source-files-and-building-a-binary-executable/>
+- [JSON-to-Go](https://mholt.github.io/json-to-go/)
