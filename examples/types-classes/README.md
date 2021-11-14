@@ -4,10 +4,11 @@ Besides a types and classes example, this example also shows how a solution can 
 
 ## Running
 
-To run this code we need to reference all of the necessary files.
+To run this code we need to reference all of the necessary files.  From within the directory you may do one of the following:
 
 ```bash
-go run types-classes.go doggy.go 
+go run types-classes.go doggy.go
+go run .
 ```
 
-or `go run .`
+Or from the parent directory: `go run types-classes/*.go`

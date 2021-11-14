@@ -20,6 +20,7 @@ func (d Doggy) Speak() {
 	fmt.Println(d.Sound)
 }
 
+// SpeakTwice is a double presentation of Sound
 func (d Doggy) SpeakTwice() {
 	d.Sound = fmt.Sprintf("%v %v", d.Sound, d.Sound) // we are only modifying our copy of d Doggy
 	fmt.Println(d.Sound)
