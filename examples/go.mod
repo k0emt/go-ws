@@ -1,3 +1,3 @@
-module dbbear/example
+module dbbear/examples
 
 go 1.17
