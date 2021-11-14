@@ -39,6 +39,8 @@ func checkForError(err error) {
 	}
 }
 
+// toursFromJson converts JSON to a Tour slice
+// TODO: candidate for a unit test
 func toursFromJson(content string) []Tour {
 	tours := make([]Tour, 0, 20)
 
@@ -48,7 +50,7 @@ func toursFromJson(content string) []Tour {
 
 	var tour Tour
 	for decoder.More() {
-		err := decoder.Decode(&tour)
+		err := decoder.Decode(&tour) // <-- here is our Tour struct
 		checkForError(err)
 		tours = append(tours, tour)
 	}

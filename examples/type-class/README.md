@@ -1,4 +1,4 @@
-# Types and Class
+# Type and Class
 
 Besides a types and classes example, this example also shows how a solution can use multiple files.
 
