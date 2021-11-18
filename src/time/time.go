@@ -27,6 +27,14 @@ type worldTime struct {
 	WeekNumber           int    `json:"week_number"`  // "week_number":43
 }
 
+type ResponseDocument struct {
+	UtcDateTime       string `json:"utc"`
+	LocalTime         string `json:"localTime"`
+	TimeZone          string `json:"tz"`
+	PrivateDoNotShare string `json:"-"`
+	NotAlwaysSet      string `json:"nas,omitempty"`
+}
+
 // TODO: refactor for testability
 func GetUtcTime(c *gin.Context) {
 
@@ -41,10 +49,18 @@ func GetUtcTime(c *gin.Context) {
 
 		var wt worldTime
 		json.Unmarshal(data, &wt)
-		fmt.Printf("--------\n%#v\n", wt)
+		fmt.Printf("--------\n%#v\n--------\n", wt)
 
-		jsonMessage := json.RawMessage(data)
-		c.JSON(http.StatusOK, jsonMessage)
+		// return what we got from the time service
+		// jsonMessage := json.RawMessage(data)
+		// c.JSON(http.StatusOK, jsonMessage)
+
+		// parse what we got back into our struct
+		responseDoc := ResponseDocument{
+			wt.UtcDateTime, wt.DateTime, wt.TimeZoneAbbreviation, "don't share this", "",
+		}
+
+		c.JSON(http.StatusOK, responseDoc) // takes care of the marshal to json
 	}
 
 }
