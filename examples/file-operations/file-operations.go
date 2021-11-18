@@ -19,12 +19,13 @@ func writeFile(fileName string) {
 	myFile, err := os.Create(fileName)
 	checkError(err)
 
+	defer myFile.Close() // this is like a finally statement
+	// defer statement typically comes right after the initialization of the resource it will cleanup
+
 	length, err := io.WriteString(myFile, content)
 	checkError(err)
 
 	fmt.Printf("Wrote file with %v characters\n", length)
-
-	defer myFile.Close()
 }
 
 func readFile(fileName string) {
