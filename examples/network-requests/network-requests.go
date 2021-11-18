@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"strings"
 )
 
@@ -23,10 +24,10 @@ func main() {
 	content := string(bytes)
 	// fmt.Print(content) // now need to parse this text into something we can work with
 
-	tours := toursFromJson(content)
+	tours := toursFromJson(content) // then maybe another step to get into struct with types we want
 
 	for _, tour := range tours {
-		fmt.Printf("%v,%v,%v\n", tour.Name, tour.Price, tour.Difficulty)
+		fmt.Printf("%v, %v, %.2f, %v\n", tour.Title, tour.Name, tour.PriceNumeric(), tour.Difficulty)
 	}
 }
 
@@ -57,6 +58,12 @@ func toursFromJson(content string) []Tour {
 }
 
 type Tour struct {
-	Name, Price, Difficulty string
-	// TODO: how to turn the Price into an integer?
+	Name, Difficulty string
+	Price            string // is PriceNumeric() the correct way to translate to numeric?
+	Title            string `json:"packageTitle"` // map to a different field name in the json
+}
+
+func (tour *Tour) PriceNumeric() float64 {
+	parsedPrice, _ := strconv.ParseFloat(tour.Price, 64)
+	return parsedPrice
 }
