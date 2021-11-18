@@ -25,3 +25,8 @@ func (d Doggy) SpeakTwice() {
 	d.Sound = fmt.Sprintf("%v %v", d.Sound, d.Sound) // we are only modifying our copy of d Doggy
 	fmt.Println(d.Sound)
 }
+
+// using a pointer receiver here
+func (d *Doggy) SetName(newName string) {
+	d.Name = newName
+}
