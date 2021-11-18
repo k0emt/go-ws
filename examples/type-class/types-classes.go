@@ -14,4 +14,7 @@ func main() {
 	peke.Speak()
 	peke.SpeakTwice()
 	peke.Speak()
+
+	peke.SetName("Old Dog")
+	fmt.Println(peke.Name)
 }
