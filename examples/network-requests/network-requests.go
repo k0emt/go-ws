@@ -13,10 +13,9 @@ const url = "http://services.explorecalifornia.org/json/tours.php"
 func main() {
 	response, err := http.Get(url)
 	checkForError(err)
+	defer response.Body.Close()
 
 	fmt.Printf("Response Type: %T\n", response)
-
-	defer response.Body.Close()
 
 	bytes, err := ioutil.ReadAll(response.Body)
 	checkForError(err)
