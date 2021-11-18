@@ -74,6 +74,10 @@ Some more things I'm going to tackle with this project:
 - how to create and run unit tests
 - how to use with swagger.io
 - Authentication / Authorization: API key?  JWT
+- read from a configuration file
+- log to an application log file
+- write process ID to file
+- `recover` error handling
 
 ## Learning Resources
 
@@ -104,5 +108,9 @@ Some more things I'm going to tackle with this project:
 ## Resource Links
 
 - [Go Lang tutorial](https://golang.org/doc/tutorial/getting-started)
+- [A Tour of Go](https://tour.golang.org/welcome/1)
+- [Effective Go](https://golang.org/doc/effective_go#web_server)
+- [Go Standard Library](https://pkg.go.dev/std)
 - [Gin web services](https://golang.org/doc/tutorial/web-service-gin)
 - [JSON-to-Go](https://mholt.github.io/json-to-go/)
+- [Concurrency is _not_ Parallelism video](https://www.youtube.com/watch?v=oV9rvDllKEg)
