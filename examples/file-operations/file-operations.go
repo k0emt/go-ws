@@ -10,8 +10,23 @@ import (
 func main() {
 	fileName := "./temp.txt"
 
+	fileStat(fileName) // no file
+
 	writeFile(fileName)
-	defer readFile(fileName) // defer says wait until everything else is done
+	readFile(fileName) // defer says wait until everything else is done
+
+	fileStat(fileName) // file
+
+	defer removeTempFile(fileName)
+}
+
+func fileStat(fileName string) {
+	fi, err := os.Stat(fileName)
+	if err != nil {
+		fmt.Println("stat failed for ", fileName)
+		return
+	}
+	fmt.Printf("stat %v %v\n", fi.Name(), fi.Size())
 }
 
 func writeFile(fileName string) {
@@ -37,5 +52,11 @@ func readFile(fileName string) {
 func checkError(err error) {
 	if err != nil {
 		panic(err)
+	}
+}
+
+func removeTempFile(fileName string) {
+	if os.Remove(fileName) != nil {
+		fmt.Println("Error removing file ", fileName)
 	}
 }
