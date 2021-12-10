@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"strconv"
 	"strings"
-	"time"
 )
 
 func mapper(c rune) rune {
@@ -69,11 +67,4 @@ func main() {
 	f, _ := strconv.ParseFloat("6.28", 64)
 	fmt.Printf("%[1]f %.4[1]f\n", f) // repeated use of the argument
 
-	// random numbers
-	rSource := rand.NewSource(time.Now().UnixNano())
-	rGenerator := rand.New(rSource)
-
-	fmt.Printf("%2d %f\n", rGenerator.Intn(10), rGenerator.Float64()*5.0) // random numbers
-
-	fmt.Println(rGenerator.Perm(10)) // a slice of random order ints [0,n)
 }
