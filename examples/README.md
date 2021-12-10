@@ -8,3 +8,7 @@ go run loops/loops.go
 ```
 
 The [type-class example](./type-class/README.md) is a little different with multiple files.
+
+## Additional concepts to document
+
+- Command line arguments
