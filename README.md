@@ -78,6 +78,7 @@ Some more things I'm going to tackle with this project:
 - log to an application log file
 - write process ID to file
 - `recover` error handling
+- [fuzzing test](https://go.dev/doc/fuzz/) example when it is released into production
 
 ## Learning Resources
 
@@ -113,5 +114,8 @@ Some more things I'm going to tackle with this project:
 - [Go Standard Library](https://pkg.go.dev/std)
 - [Gin web services](https://golang.org/doc/tutorial/web-service-gin)
 - [JSON-to-Go](https://mholt.github.io/json-to-go/)
-- [Concurrency is _not_ Parallelism video](https://www.youtube.com/watch?v=oV9rvDllKEg)[Slides](https://talks.golang.org/2012/waza.slide#1)
+- [Concurrency is _not_ Parallelism video](https://www.youtube.com/watch?v=oV9rvDllKEg) [(Slides)](https://talks.golang.org/2012/waza.slide#1)
 
+## Libraries to check out
+
+- [Fyne - cross platform GUI](https://github.com/fyne-io/fyne)
