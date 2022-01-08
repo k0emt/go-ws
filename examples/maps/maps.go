@@ -12,8 +12,12 @@ func main() {
 		"Amzon":   900.00,
 		"NotFlex": 777.77,
 		"Gaggle":  555.44,
+		"Scrub":   11.11,
 	} // the trailing , is required in a multi-line definition
 	// no comments within assignment
+
+	myMap["Apl"] = 888.88
+	delete(myMap, "Scrub")
 
 	// just the keys
 	for k := range myMap {

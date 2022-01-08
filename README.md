@@ -119,3 +119,4 @@ Some more things I'm going to tackle with this project:
 ## Libraries to check out
 
 - [Fyne - cross platform GUI](https://github.com/fyne-io/fyne)
+- [Go Kit](https://gokit.io/) framework for microservices
