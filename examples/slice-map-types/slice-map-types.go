@@ -21,6 +21,11 @@ func sliceExample() {
 
 	tla = append(tla, "BIG")
 
+	fmt.Println(tla)
+
+	// super easy to swap
+	tla[0], tla[3] = tla[3], tla[0]
+
 	// removing an item from a slice is gross.
 	tla = removeItem(tla, "123")
 
