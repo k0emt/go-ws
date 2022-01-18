@@ -34,6 +34,12 @@ func sliceExample() {
 	}
 
 	fmt.Println("----------------")
+	partialHead := tla[:3]
+	partialTail := tla[2:]
+	anotherSlice := append(partialHead, partialTail...)
+
+	fmt.Println(anotherSlice)
+	fmt.Println("----------------")
 }
 
 func removeItem(sourceSlice []string, target string) []string {
