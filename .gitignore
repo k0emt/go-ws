@@ -1,3 +1,4 @@
-src/web-spike
+.DS_Store
 .vscode/*
 go-ws
+src/web-spike

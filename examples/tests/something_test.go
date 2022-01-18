@@ -5,6 +5,27 @@ import (
 	"testing"
 )
 
+func TestDoSomethingNoError(t *testing.T) {
+	result, _ := doSomething("AAAbbbCCC")
+	expectedValue := "AAABBBCCC"
+
+	if result != expectedValue {
+		t.Errorf("doSomething(AAAbbbCCC) = %s, expected %s", result, expectedValue)
+	}
+}
+
+func TestDoSomethingError(t *testing.T) {
+	_, error := doSomething("")
+	// expectedValue := "Should have provided a non-empty string"
+	expected := "need to provide text to operate on"
+
+	if error == nil {
+		t.Errorf("no error")
+	} else if *error != expected {
+		t.Errorf("Expected %s, Received %s", expected, *error)
+	}
+}
+
 func TestDoSomething(t *testing.T) {
 	val, err := doSomething("aaaaAAAA")
 

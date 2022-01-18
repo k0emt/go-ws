@@ -1,10 +1,24 @@
 # Tests
 
-This code here demonstrates writing tests with Go.
+Go has a [testing module](https://pkg.go.dev/testing)
+
+This code here demonstrates using the testing module for testing, benchmarking, and profiling.
+
+## Writing Tests
+
+Test file names use the suffix `_test.go`
+Tests are of the format:
+
+```go
+func TestThing(t *testing.T) {
+  result := functionUnderTest(argument)
+  if result != expectedValue {
+    t.Errorf("functionUnderTest(argument) = %d, expected %d", result, expectedValue)
+  }
+}
+```
 
 ## Running Tests
-
-Go has a [testing module](https://pkg.go.dev/testing)
 
 Run tests with `go test` or `go test -v`
 
@@ -18,7 +32,7 @@ Many IDEs support running individual test cases directly.
 
 ## Benchmarks
 
-- Use `testing.B` for setting up benchmarks
+- Use `b *testing.B` for setting up benchmarks
 - Run with `go test -v -bench .` the `.` says run all of the benchmarks
 - Specify a non-existant test to run and it will skip running tests at the same time
   `go test -v bench . -run SOMEMADEUPTESTNAME`
