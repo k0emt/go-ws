@@ -7,6 +7,7 @@ import (
 
 func main() {
 	fmt.Println(doSomething("aaaaAAAA"))
+	fmt.Println(doAthing("AbCdEfGhI"))
 }
 
 // returning upper cased text, error message on empty string
