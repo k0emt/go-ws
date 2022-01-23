@@ -11,6 +11,7 @@ type Doggy struct {
 	Weight int
 	Name   string
 	Sound  string
+	owner  owner
 }
 
 // d Doggy is known as the receiver

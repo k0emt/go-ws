@@ -14,9 +14,9 @@ func main() {
 
 func orderBasedAssignment() {
 	// an instance of Dog
-	peke := Doggy{"Pekinese", 15, "Bouncer", "grrrRr!"} // match order in the type
-	fmt.Println(peke)                                   // only shows values
-	fmt.Printf("%+v\n", peke)                           // shows field name along with value
+	peke := Doggy{"Pekinese", 15, "Bouncer", "grrrRr!", owner{"Mom", "4175551234"}} // match order in the type
+	fmt.Println(peke)                                                               // only shows values
+	fmt.Printf("%+v\n", peke)                                                       // shows field name along with value
 	fmt.Printf("Breed: %v\nWeight: %v\nName: %v\n", peke.Breed, peke.Weight, peke.Name)
 
 	peke.Speak()
@@ -28,9 +28,10 @@ func orderBasedAssignment() {
 }
 
 func anotherWay() {
-	yorky := Doggy{Name: "T.Rex", Weight: 6}
-	fmt.Printf("Name: %v, weight: %v \n", yorky.Name, yorky.Weight)
+	yorky := Doggy{Name: "T.Rex", Weight: 6, owner: owner{name: "Dad", phone: "+15735551212"}} // named arguments and embedded
+	fmt.Printf("Name: %v, weight: %v, owner: %v\n", yorky.Name, yorky.Weight, yorky.owner)
 	fmt.Println(yorky)
+
 }
 
 func oneMoreWay() {
