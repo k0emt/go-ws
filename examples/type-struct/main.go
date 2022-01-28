@@ -14,9 +14,10 @@ func main() {
 
 func orderBasedAssignment() {
 	// an instance of Dog
-	peke := Doggy{"Pekinese", 15, "Bouncer", "grrrRr!", owner{"Mom", "4175551234"}} // match order in the type
-	fmt.Println(peke)                                                               // only shows values
-	fmt.Printf("%+v\n", peke)                                                       // shows field name along with value
+	peke := Doggy{"Pekinese", 15, "Bouncer", "grrrRr!",
+		owner{"Mom", "4175551234"}, owner{}} // match order in the type
+	fmt.Println(peke)         // only shows values
+	fmt.Printf("%+v\n", peke) // shows field name along with value
 	fmt.Printf("Breed: %v\nWeight: %v\nName: %v\n", peke.Breed, peke.Weight, peke.Name)
 
 	peke.Speak()

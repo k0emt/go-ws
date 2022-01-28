@@ -7,11 +7,12 @@ import (
 // Exported type should have a comment
 // Doggy is my thing that holds identifying characterists
 type Doggy struct {
-	Breed  string
-	Weight int
-	Name   string
-	Sound  string
-	owner  owner
+	Breed            string
+	Weight           int
+	Name             string
+	Sound            string
+	owner            // fieldname same as type
+	secondaryContact owner
 }
 
 // d Doggy is known as the receiver
