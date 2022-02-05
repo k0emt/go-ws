@@ -26,9 +26,7 @@ func main() {
 	fmt.Println("----")
 
 	// just the values
-	for _, v := range myMap {
-		fmt.Println(v)
-	}
+	justTheValues(myMap)
 	fmt.Println("----")
 
 	// everything
@@ -52,6 +50,12 @@ func main() {
 	`)
 
 	fmt.Println(myWordCounts)
+}
+
+func justTheValues(m map[string]float64) {
+	for _, v := range m {
+		fmt.Println(v)
+	}
 }
 
 func wordCount(text string) map[string]int {
