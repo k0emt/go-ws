@@ -13,5 +13,14 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println(resp)
+	fmt.Printf("%v\n==============================================\n", resp)
+
+	buff := make([]byte, 498)
+	byteCount, _ := resp.Body.Read(buff)
+	for byteCount > 0 {
+		fmt.Printf("%v ZZZ\n", string(buff))
+		byteCount, _ = resp.Body.Read(buff)
+	}
+
+	// io.Copy(os.Stdout, resp.Body)
 }
