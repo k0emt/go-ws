@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 )
+
+type customWriter struct{}
 
 func main() {
 	resp, err := http.Get("http://google.com")
@@ -15,12 +18,24 @@ func main() {
 
 	fmt.Printf("%v\n==============================================\n", resp)
 
-	buff := make([]byte, 498)
-	byteCount, _ := resp.Body.Read(buff)
-	for byteCount > 0 {
-		fmt.Printf("%v ZZZ\n", string(buff))
-		byteCount, _ = resp.Body.Read(buff)
-	}
+	// do it all myself and put ZZZ after each buffer chunk
+	/*
+		buff := make([]byte, 498)
+		byteCount, _ := resp.Body.Read(buff)
+		for byteCount > 0 {
+			fmt.Printf("%v ZZZ\n", string(buff))
+			byteCount, _ = resp.Body.Read(buff)
+		}
+	*/
 
 	// io.Copy(os.Stdout, resp.Body)
+
+	cw := customWriter{}
+	io.Copy(cw, resp.Body)
+}
+
+func (customWriter) Write(buff []byte) (int, error) {
+	fmt.Printf("%d | %v\n\n", len(buff), string(buff))
+
+	return len(buff), nil
 }
