@@ -48,6 +48,7 @@ Things learned:
   sort.Sort(sort.Reverse(sort.IntSlice(numbers)))
   fmt.Println(numbers)
   ```
+  
 - super cool, easy to swap items `s[i], s[n] = s[n], s[i]`
 
 ## Some GO commands
