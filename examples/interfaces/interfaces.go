@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
+	shapes()
+
+	fmt.Println("================")
+
 	square := Square{10.0}
 	circle := Circle{5.0}
 
