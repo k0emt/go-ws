@@ -29,7 +29,7 @@ func goRoutinesExample() {
 	waitGroup.Wait()
 }
 
-// channels are kind of like queues
+// channels are kind of like message queues
 // consider if instead of looping through a set of numbers
 // we were to have a list of URLs.
 // then each go function would send the body to the channel
@@ -55,14 +55,15 @@ func multiChannelSelect() {
 	ch1, ch2 := make(chan int), make(chan int)
 
 	go func() {
-		ch1 <- 42
+		ch1 <- 55
+		ch2 <- 72 // select case short circuits, so we don't see 72
 	}()
 
 	select {
 	case val := <-ch1:
-		fmt.Printf("got %d from ch1\n", val)
+		fmt.Printf("mcs got %d from ch1\n", val)
 	case val := <-ch2:
-		fmt.Printf("got %d from ch2\n", val)
+		fmt.Printf("mcs got %d from ch2\n", val)
 	}
 
 	// part 2 -----
@@ -74,7 +75,7 @@ func multiChannelSelect() {
 	}()
 	select {
 	case val := <-out:
-		fmt.Printf("got %f\n", val)
+		fmt.Printf("mcs got %f\n", val)
 	case <-time.After(200 * time.Millisecond): // change 200 to 20 to see timeout
 		fmt.Println("TIMEOUT!")
 	}

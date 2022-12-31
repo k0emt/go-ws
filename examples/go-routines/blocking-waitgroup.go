@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	sleepers := []int{2, 3, 2, 3, 3, 1}
-	var wg sync.WaitGroup
+	sleepers := []int{1, 2, 3, 2, 2, 3, 4, 3, 1}
+	var wg sync.WaitGroup // use this construct to make sure everything has completed
 
 	start := time.Now()
 
