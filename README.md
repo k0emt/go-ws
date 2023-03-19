@@ -117,6 +117,7 @@ Some more things I'm going to tackle with this project:
 - [Gin web services](https://golang.org/doc/tutorial/web-service-gin)
 - [JSON-to-Go](https://mholt.github.io/json-to-go/)
 - [Concurrency is _not_ Parallelism video](https://www.youtube.com/watch?v=oV9rvDllKEg) [(Slides)](https://talks.golang.org/2012/waza.slide#1)
+- [Go Standar Project Layout](https://github.com/golang-standards/project-layout)
 
 ## Libraries to check out
 
