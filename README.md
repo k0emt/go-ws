@@ -7,8 +7,7 @@ This research project was created to explore Go by creating a simple web service
 Build and run:
 
 ```bash
-cd src
-go build .
+go build
 go run .
 ```
 

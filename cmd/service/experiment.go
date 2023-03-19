@@ -1,4 +1,4 @@
-package main
+package service
 
 import (
 	"fmt"
@@ -6,12 +6,12 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	articles "go-ws/articles"
-	bite "go-ws/bite"
-	time "go-ws/time"
+	articles "go-ws/cmd/service/articles"
+	bite "go-ws/cmd/service/bite"
+	time "go-ws/cmd/service/time"
 )
 
-func main() {
+func Execute() {
 	fmt.Println("Starting web service")
 
 	router := gin.Default()
